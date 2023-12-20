@@ -53,18 +53,17 @@ This is a simple To-Do application created using Django, HTML, CSS, Bootstrap, J
 Visit http://localhost:8000 in your web browser.
 
 ## Usage
- - Sign Up:
+### Sign Up:
 
-## Create an account by signing up.
- - Log In:
+ - Create an account by signing up.
+### Log In:
 
-## Log in using your credentials.
- - Create Tasks:
+ - Log in using your credentials.
+### Create Tasks:
+ - Once logged in, create tasks, and view the date and time of creation.
+### Manage Tasks:
 
-## Once logged in, create tasks, and view the date and time of creation.
- - Manage Tasks:
-
-## Mark tasks as complete or incomplete.
+ - Mark tasks as complete or incomplete.
  - Edit and update task details.
  - Delete tasks.
 
