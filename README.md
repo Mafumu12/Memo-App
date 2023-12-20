@@ -52,10 +52,26 @@ This is a simple To-Do application created using Django, HTML, CSS, Bootstrap, J
 
 Visit http://localhost:8000 in your web browser.
 
+## Usage
+ - Sign Up:
+
+## Create an account by signing up.
+ - Log In:
+
+## Log in using your credentials.
+ - Create Tasks:
+
+## Once logged in, create tasks, and view the date and time of creation.
+ - Manage Tasks:
+
+## Mark tasks as complete or incomplete.
+ - Edit and update task details.
+ - Delete tasks.
+
 ## License
-This project is licensed under the MIT License.
+ - This project is licensed under the MIT License.
 
 ## Acknowledgments
-Thanks to the Django community for providing a robust framework.
+ - Thanks to the Django community for providing a robust framework.
 
 
