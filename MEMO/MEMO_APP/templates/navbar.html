@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+{% if user.is_authenticated %}
+<!-- Navigation bar for authenticated users -->
+<nav class="navbar container-sm" style="background-color: #1f1f1f; border-radius: 10px;">
+    <br>
+    <br>
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">
+            <!-- Greeting for authenticated user -->
+            <strong style="color: white; font-family: 'SF Pro Display Bold', sans-serif;">
+                Hello {{ user }},
+            </strong>
+            <!-- Display number of incomplete tasks -->
+            <p style="color: white; font-family: 'SF Pro Display Regular', sans-serif;">
+                You have {{ incomplete_tasks }} incomplete task
+            </p> 
+        </span>
+        <div class="d-flex">
+            <!-- Logout link for authenticated user -->
+            <a href="{% url 'REGISTRATION_APP:logout' %}" class="ms-auto" style="text-decoration: none;">
+                <h5 style="color: white; font-family: 'SF Pro Display Bold', sans-serif;">Logout</h5>
+            </a>
+        </div>
+    </div>
+    <br>
+    <br>
+</nav>
+{% else %}
+<!-- Navigation bar for non-authenticated users -->
+<nav class="navbar container-sm" style="background-color: #1f1f1f; border-radius: 10px;">
+    <br>
+    <br>
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">
+            <!-- Welcome message for non-authenticated users -->
+            <strong style="color: white; font-family: 'SF Pro Display Bold', sans-serif;">
+                Welcome! Please login or create an account 
+            </strong>
+        </span>
+    </div>
+    <br>
+    <br>
+</nav>
+{% endif %}
+
+</body>
+</html>

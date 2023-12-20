@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<head>
+   
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<div class="container-sm bg-light p-3 rounded">
+  <div class="row">
+    <div class="col-md-6">
+      <form class="d-flex" method="get" action="" role="search">
+        {% csrf_token %}
+        <div class="input-group">
+          <input class="form-control" type="search" name="goals" value="{{ goals }}" placeholder="Search..." aria-label="Search">
+          <button class="btn btn-black" type="submit">
+            <i class="fas fa-search"></i> <!-- Search icon -->
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-6 d-flex justify-content-end align-items-center">
+      <a href="{% url 'MEMO_APP:new' %}" class="btn btn-dark">
+        <i class="fas fa-plus"></i> <!-- Plus icon for adding new task -->
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container-sm mt-3">
+  <br>
+  {% for task in tasks %}
+  <div class="container-sm mt-3 p-2 border rounded bg-light">
+    <div class="row">
+      <div class="col-md-1 d-flex justify-content-center align-items-center">
+        <a href="{% url 'MEMO_APP:complete' task.id %}" class="btn ">
+          {% if task.status %}
+            <i class="fas fa-undo"></i> <!-- Icon for unmarking as completed -->
+          {% else %}
+            <i class="fas fa-check"></i> <!-- Icon for marking as completed -->
+          {% endif %}
+        </a>
+      </div>
+      <div class="col-md-5">
+        <strong {% if task.status %}style="text-decoration: line-through;"{% endif %}>{{ task.title }}</strong>
+        <p {% if task.status %}style="text-decoration: line-through;"{% endif %}>{{ task.description }}</p>
+        <p {% if task.status %}style="text-decoration: line-through;"{% endif %}>{{ task.created }}</p>
+      </div>
+      <div class="col-md-6 d-flex justify-content-end align-items-center">
+        <a href="{% url 'MEMO_APP:delete' task.id %}" class="btn btn-dark">
+          <i class="far fa-trash-alt"></i> <!-- Trash icon for deleting task -->
+        </a>
+        <a href="{% url 'MEMO_APP:edit' task.id %}" class="btn btn-dark mx-1">
+          <i class="fa-regular fa-pen-to-square"></i> <!-- Edit icon for editing task -->
+        </a>
+      </div>
+    </div>
+  </div>
+  <br>
+  {% endfor %}
+</div>
+{% endblock %}

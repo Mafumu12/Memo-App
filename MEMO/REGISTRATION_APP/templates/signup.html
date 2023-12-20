@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {# Extends the base template named 'base.html'. #}
+{% block content %} {# Defines a block named 'content' within the extended template. #}
+
+<br>
+<div class="container-sm bg-light p-3 rounded">
+    <form action="{% url 'REGISTRATION_APP:signup' %}" method="post" class="needs-validation" novalidate>
+        {% csrf_token %} {# Generates a hidden input field with the CSRF token for security. #}
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="{{ form.username.id_for_label }}"
+                               name="{{ form.username.name }}" placeholder="Username" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid username.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="{{ form.password1.id_for_label }}"
+                               name="{{ form.password1.name }}" placeholder="Password" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid password.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="{{ form.password2.id_for_label }}"
+                               name="{{ form.password2.name }}" placeholder="Confirm Password" required>
+                        <div class="invalid-feedback">
+                            Please confirm your password.
+                        </div>
+                    </div>
+                    <br>
+                    Already have an account? Click <a href="{% url 'REGISTRATION_APP:login' %}">here</a> to login</p>
+                    <button type="submit" class="btn btn-dark">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %} {# Closes the 'content' block. #}

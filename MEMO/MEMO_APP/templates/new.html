@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-sm my-3 bg-body-tertiary border rounded" style="border-radius: 10px;">
+    <!-- Start of the form -->
+    <form method="post" action="{% url 'MEMO_APP:new' %}">
+        {% csrf_token %}
+
+        <!-- Title input field -->
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                {{ form.title.label_tag }}
+                {{ form.title }}
+            </div>
+        </div>
+
+        <!-- Description input field -->
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                {{ form.description.label_tag }}
+                {{ form.description }}
+
+                <!-- Save and Back buttons -->
+                <div class="text-end mt-3">
+                    <button type="submit" class="btn btn-dark">Save</button>
+                    <a href="{% url 'MEMO_APP:home' %}" class="btn btn-dark mx-1">Back</a>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- End of the form -->
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+1. REGISTRATION APP
+  -VIEWS
+    .user_login
+    .user_signup
+    .user_logout
+  
+  -TEMPLATES
+   . login.html
+   . signup.html
+
+
+2.MEMO APP
+  -MODELS
+   .user
+   .Name
+
+   .TASK
+     1.Title
+     2.DESCRIPTION(list of things to and if the have been completed or not )
+     3.DATE AND TIME CREATED
+     4.STATUS COMPLETION
+     5. owner
+
+  -TEMPLATES
+    .Navbar.html
+    .base.html
+    .home.html
+    .edit.html
+    .new.html
+
+  -VIEWS
+   .home
+   .new
+   .edit
+   .delete

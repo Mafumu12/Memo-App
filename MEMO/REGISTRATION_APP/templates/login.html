@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {# Extends the base template named 'base.html'. #}
+{% block content %} {# Defines a block named 'content' within the extended template. #}
+
+<br>
+<div class="container-sm bg-light p-3 rounded">
+    <br>
+    <form method="post" action="{% url 'REGISTRATION_APP:login' %}">
+        {% csrf_token %} {# Generates a hidden input field with the CSRF token for security. #}
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input class="form-control" type="username" name="username" required placeholder="username" aria-label="username">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input class="form-control" type="password" name="password" required placeholder="password" aria-label="password">
+                </div>
+                <div class="text-begin mt-3">
+                    <p style="font-family: 'SF Pro Display Bold', sans-serif;">Don't have an account? Click <a href="{% url 'REGISTRATION_APP:signup' %}">here</a> to signup</p>
+                    <button type="submit" class="btn btn-dark">Login</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %} {# Closes the 'content' block. #}
