@@ -40,7 +40,7 @@ This is a simple To-Do application created using Django, HTML, CSS, Bootstrap, J
 
 - Change into the project directory:
   ```bash
-  cd todo-app
+  cd MEMO
 
 - Apply migrations:
   ```bash
