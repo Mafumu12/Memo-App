@@ -1,31 +1,19 @@
-{% extends 'base.html' %} {# Extends a base template named 'base.html'. #} {%
-block content %} {# Defines a block named 'content' within the extended
-template. #}
+{% extends 'base.html' %} {% block content %}
 
 <form method="post" action=" ">
-  {# Creates a form with HTTP POST method and an empty 'action' attribute. #} {%
-  csrf_token %} {# Generates a hidden input field with the CSRF token for
-  security. #}
+  {% csrf_token %}
   <div class="row justify-content-center">
-    <div class="col-md-6">
-      {{ form.title.label_tag }} {# Renders the label tag for the 'title' field
-      of the form. #} {{ form.title }} {# Renders the input element for the
-      'title' field. #}
-    </div>
+    <div class="col-md-6">{{ form.title.label_tag }} {{ form.title }}</div>
   </div>
   <div class="row justify-content-center">
     <div class="col-md-6">
-      {{ form.description.label_tag }} {# Renders the label tag for the
-      'description' field. #} {{ form.description }} {# Renders the input
-      element for the 'description' field. #}
+      {{ form.description.label_tag }} {{ form.description }}
       <div class="text-begin mt-3">
-        <button type="submit" class="btn btn-dark">Save</button> {# Submit
-        button for form submission. #}
+        <button type="submit" class="btn btn-dark">Save</button>
         <a href="{% url 'MEMO_APP:home' %}" class="btn btn-dark mx-1">Back</a>
-        {# Link to go back to the home page. #}
       </div>
     </div>
   </div>
 </form>
 
-{% endblock %} {# Closes the 'content' block. #}
+{% endblock %}
